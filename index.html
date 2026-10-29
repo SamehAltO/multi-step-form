@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sidebar start -->
+    <div class="sidebar">
+      <div class="step">
+        <button id="num-btn" class="active" value="1">1</button>
+        <div class="plan-step">
+          <p>Step 1</p>
+          <h3>Your info</h3>
+        </div>
+      </div>
+      <div class="step">
+        <button id="num-btn" value="2">2</button>
+        <div class="plan-step">
+          <p>Step 2</p>
+          <h3>Select plan</h3>
+        </div>
+      </div>
+      <div class="step">
+        <button id="num-btn" value="3">3</button>
+        <div class="plan-step">
+          <p>Step 3</p>
+          <h3>Add-ons</h3>
+        </div>
+      </div>
+      <div class="step">
+        <button id="num-btn" value="4">4</button>
+        <div class="plan-step">
+          <p>Step 4</p>
+          <h3>Summary</h3>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar end -->
+
+
+  <!-- Step 1 start -->
+  <div class="info " id="info-1">
+    <h1>Personal info</h1>
+    <p class="info-title">Please provide your name, email address, and phone number.</p>
+    <form action="" id="first-form">
+      <div class="form-control">
+        <div class="labels">
+          <label for="nameInput">Name</label>
+          <p class="warning hide">This field is required</p>
+        </div>
+          <input type="text" name="" id="nameInput" placeholder="e.g. Stephen King" >
+        </div>
+        <div class="form-control">
+          <div class="labels">
+            <label for="mailInput">Email Address</label>
+            <p class="warning hide">This field is required</p>
+          </div>
+          <input type="email" name="" id="mailInput" placeholder="e.g. stephenking@lorem.com" >
+        </div>
+        <div class="form-control">
+          <div class="labels">
+            <label for="phoneInput">Phone Number</label>
+            <p class="warning hide">This field is required</p>  
+          </div>
+          <input type="number" name="" id="phoneInput" placeholder="e.g. +1 234 567 890" >
+        </div>
+        <div class="buttons">
+          <button type="submit" id="next" data-value="2">Next Step</button>
+        </div>
+    </form>
+  </div>
+  <!-- Step 1 end -->
+
+
+  <!-- Step 2 start -->
+  <div class="info hide" id="info-2">
+
+  <h1>Select your plan</h1>  
+  <p class="info-title">You have the option of monthly or yearly billing.</p>
+  
+  <div class="duration-plans">
+    <div class="plan active">
+      <img src="./assets/images/icon-arcade.svg" alt="arcade icon">
+      <div>
+        <h4>Arcade</h4>
+        <span class="price">$9/mo</span>
+        <span class="price yearly hide">$90/yr</span>
+        
+        <p class="discount hide">2 months free</p>
+      </div>
+    </div>
+    <div class="plan">
+      <img src="./assets/images/icon-advanced.svg" alt="arcade icon">
+      <div>
+        <h4>Advanced</h4>
+        <span class="price">$12/mo</span>
+        <span class="price yearly hide">$120/yr</span>
+        <p class="discount hide">2 months free</p>
+      </div>
+    </div>
+    <div class="plan">
+      <img src="./assets/images/icon-pro.svg" alt="arcade icon">
+      <div>
+        <h4>Pro</h4>
+        <span class="price">$15/mo</span>
+        <span class="price yearly hide">$150/yr</span>
+        <p class="discount hide">2 months free</p>
+      </div>
+    </div>
+  </div>
+  <div class="duration">
+    <span data-value="1" class="step-2-label label-1 left active" id="monthly">Monthly</span>
+    <input type="range" name="" id="durationInput" min="1" max="2" value="1" >
+    <span data-value="2" class="step-2-label label-2 right" id="monthly">Yearly</span>
+  </div>
+  
+  <div class="buttons">
+    <button class="btn" id="back" data-value="1">Go Back</button>
+    <button class="btn" id="next" data-value="3">Next Step</button>
+  </div>
+  
+  </div>
+  <!-- Step 2 end -->
+
+  <!-- Step 3 start -->
+  <div class="info hide" id="info-3">
+  <h1>Pick add-ons</h1>
+  <p class="info-title">Add-ons help enhance your gaming experience.</p>
+  <div class="choices">
+    <label for="choice-1" class="choice">
+      <div class="left">
+        <div class="check-container">
+
+          <input type="checkbox" name="" class="choice-inp choice-inp-1" id="choice-1">
+          <span class="checkmark"></span>
+        </div>
+        <div>
+          <h4 id="head">Online service</h4>
+          <p class="desc">Access to multiplayer games</p>
+        </div>
+      </div>
+      <div class="right">+$1/mo</div>
+      <div class="right yearly hide">+$10/yr</div>
+    </label>
+    <label for="choice-2" class="choice">
+      <div class="left">
+        <div class="check-container">
+          
+          <input type="checkbox" name="" class="choice-inp choice-inp-2" id="choice-2">
+          <span class="checkmark"></span>
+        </div>
+        <div>
+          <h4 id="head">Larger storage</h4>
+          <p class="desc">Extra 1TB of cloud save</p>
+        </div>
+      </div>
+      <div class="right">+$2/mo</div>
+      <div class="right yearly hide">+$20/yr</div>
+    </label>
+    <label for="choice-3" class="choice">
+      <div class="left">
+        <div class="check-container">
+
+          <input type="checkbox" name="" class="choice-inp choice-inp-3" id="choice-3">
+          <span class="checkmark"></span>
+        </div>
+        <div>
+          <h4 id="head">Customizable Profile</h4>
+          <p class="desc">Custom theme on your profile</p>
+        </div>
+      </div>
+      <div class="right">+$2/mo</div>
+      <div class="right yearly hide">+$20/yr</div>
+    </label>
+  </div>    
+
+  <div class="buttons">
+    <button class="btn" id="back" data-value="2">Go Back</button>
+    <button class="btn" id="next" data-value="3">Next Step</button>
+  </div>
+</div>
+  <!-- Step 3 end
+
+  <!-- Step 4 start -->
+  <div class="info hide" id="info-4">
+  <h1>Finishing up</h1>
+  <p class="info-title">Double-check everything looks OK before confirming.</p>
+  
+  <div class="chosen-plans">
+    <div class="line head-line">
+        <div>
+          <div>
+            <h3 id="plan-head">Arcade </h3><span id="plan-duration">(Monthly)</span>
+          </div>
+          <span id="plan-price">$9/mo</span>
+        </div>
+        
+        <a id="change-plan" href="#" data-value="1">Change</a>
+      </div>
+      <hr />
+
+      <div class="additional-services">
+
+      </div>
+      <div class="total-price">
+          <div>
+            <span>Total </span><span id="pay-type">(per month)</span>
+          </div>
+          <div class="summary flex">
+            <h3 id="total"></h3>
+            /<span >mo</span>
+          </div>
+
+    </div>
+      
+  </div>
+    <div class="buttons">
+    <button class="btn" id="back" data-value="3">Go Back</button>
+    <button class="btn" id="confirm" data-value="5">Confirm</button>
+  </div>
+  <!-- Dynamically add subscription and add-on selections here -->
+
+
+  </div>
+  <!-- Step 4 end -->
+
+  <!-- Step 5 start -->
+  <div class="info hide" id="info-5">
+    <img src="./assets/images/icon-thank-you.svg" alt="">
+    <h1>Thank you!</h1>
+    <p>Thanks for confirming your subscription! <br>We hope you have fun using our <br> platform If you ever need support,<br> please feel free 
+    to email us at <br> support@loremgaming.com.</p>
+  </div>
+  </div>
+  <!-- Step 5 end -->
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+  <script defer src="./main.js"></script>
+</body>
+</html>
